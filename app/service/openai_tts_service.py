@@ -1,14 +1,11 @@
 import requests
-from dotenv import load_dotenv
-import os
 import io
 
-load_dotenv()
-api_key=os.environ.get('OPENAI_API_KEY')
+from ..core import settings
 
 url = "https://api.openai.com/v1/audio/speech"
 headers = {
-    "Authorization": f"Bearer {api_key}",
+    "Authorization": f"Bearer {settings.openai_api_key}",
     "Content-Type": "application/json"
 }
 

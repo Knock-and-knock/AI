@@ -1,4 +1,3 @@
-from pathlib import Path
 import os
 
 # LANGUAGE = "KR"
@@ -12,4 +11,3 @@ OUTPUT_PATH = os.path.join("app", "static", "temp")
 # KR_MODEL_PATH = Path(__file__).parent.parent / 'resources'/ 'bert-kor-base'
 KR_MODEL_PATH = os.path.join(os.getcwd(), "app", "resources", "bert-kor-base")
 # KR_MODEL_PATH = os.path.join(os.getcwd(), "resources", "bert-ko_onnx")
-print(KR_MODEL_PATH)
