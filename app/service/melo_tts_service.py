@@ -1,12 +1,10 @@
-from fastapi import APIRouter
-from fastapi.responses import StreamingResponse
+import soundfile as sf
 import os
 import io
-import soundfile as sf
 
 from app.melo_my.api import TTS
-from app.lib.preprcessing import preprocess_text
-from app.lib.const import KR
+from app.utils.preprcessing import preprocess_text
+from app.utils.const import KR
 
 model = TTS(language=KR["language"], 
             device='cpu',

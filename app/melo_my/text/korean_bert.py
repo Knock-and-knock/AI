@@ -1,7 +1,7 @@
 import torch
 from transformers import BertTokenizerFast, BertModel
 
-from ...lib.const import KR_MODEL_PATH
+from ...utils.const import KR_MODEL_PATH
 
 tokenizer = BertTokenizerFast.from_pretrained(KR_MODEL_PATH)
 model = BertModel.from_pretrained(KR_MODEL_PATH).to('cpu')

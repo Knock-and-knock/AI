@@ -9,7 +9,7 @@ from . import korean_bert
 from .ko_dictionary import english_dictionary, etc_dictionary
 from jamo import hangul_to_jamo
 
-from ...lib.const import KR_MODEL_PATH
+from ...utils.const import KR_MODEL_PATH
 
 model_id = KR_MODEL_PATH
 tokenizer = AutoTokenizer.from_pretrained(model_id)

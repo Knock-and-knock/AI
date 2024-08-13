@@ -20,5 +20,6 @@ class Settings(BaseSettings):
 
 try:
     settings = Settings()
+    logger.info("✅ Settings loaded successfully.")
 except ValidationError as e:
     logger.error("❌ Error loading settings:")

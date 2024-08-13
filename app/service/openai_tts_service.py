@@ -13,12 +13,11 @@ def convert_text_to_speech_openai(contents: str) -> io.BytesIO:
     data = {
         "model": "tts-1",
         "input": contents,
-        "voice": "alloy"
+        "voice": "nova"
     }
 
     response = requests.post(url, headers=headers, json=data)
     if response.status_code == 200:
-        # 음성 데이터를 바로 반환합니다.
         audio_data = response.content
         buffer = io.BytesIO(audio_data)
         return buffer

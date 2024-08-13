@@ -2,7 +2,7 @@ from datetime import datetime
 import re
 import os
 
-from ..lib.const import OUTPUT_PATH
+from ..utils.const import OUTPUT_PATH
 
 def preprocess_text(text):
     text = re.sub(r'[^\w\s]', '', text)
