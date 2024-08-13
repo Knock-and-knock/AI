@@ -1,0 +1,14 @@
+# Security
+.env
+
+# Server log
+*.log
+
+# Files
+static/temp
+resources/
+*.pth
+*.wav
+
+# etc
+__pycache__/
