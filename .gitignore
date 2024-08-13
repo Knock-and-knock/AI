@@ -6,9 +6,11 @@
 
 # Files
 static/temp
-resources/
+bert-kor-base/
+MeloTTS_kr/
 *.pth
 *.wav
+*.zip
 
 # etc
 __pycache__/
