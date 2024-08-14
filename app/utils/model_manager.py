@@ -3,7 +3,7 @@ import zipfile
 import os
 import json
 
-from ..core import logger, settings
+from ..core import logger
 from .const import RESOUERCES_DIR
 
 def model_download(name: str, id: str) -> str:
@@ -33,8 +33,7 @@ def unzip_file(zip_file_path, extract_to_path=None):
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
         zip_ref.extractall(extract_to_path)
 
-    logger.info(f"✅ 파일이 {extract_to_path} 폴더에 성공적으로 압축 해제되었습니다.")
-
+    logger.info(f"✅ The file has been successfully extracted to the {extract_to_path} folder.")
 
 def download_model():
     os.makedirs(RESOUERCES_DIR, exist_ok=True)
@@ -46,4 +45,3 @@ def download_model():
         if not os.path.isfile(file_name):
             model_download(file_name, model['id'])
             unzip_file(file_name)
-            pass
