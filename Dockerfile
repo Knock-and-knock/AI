@@ -3,12 +3,22 @@ FROM python:3.10-slim-buster AS builder
 
 WORKDIR /app
 
-# 최신 pip과 pipenv를 설치합니다.
+# MeCab 및 필요한 라이브러리 설치
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/* \
-    && pip install --no-cache-dir --upgrade pip \
-    && pip install pipenv
+    mecab \
+    libmecab-dev \
+    mecab-ipadic-utf8 \
+    build-essential \
+    curl \
+    xz-utils \
+    file \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
+# 최신 pip과 pipenv를 설치합니다.
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install pipenv
+    
 # Pipfile과 Pipfile.lock을 복사합니다.
 COPY Pipfile Pipfile.lock ./
 
